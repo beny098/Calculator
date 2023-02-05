@@ -151,6 +151,11 @@ public class JFrame_Calculator extends javax.swing.JFrame {
 
         jButton20.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton20.setText("<--");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton1.setText("7");
@@ -444,6 +449,20 @@ public class JFrame_Calculator extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         enable();
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        int length = jTextField1.getText().length();
+        int number = jTextField1.getText().length() - 1;
+        String store;
+        
+        if(length > 0){
+            StringBuilder back = new StringBuilder(jTextField1.getText());
+            back.deleteCharAt(number);
+            store=back.toString();
+            jTextField1.setText(store);
+            
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
 
     /**
      * @param args the command line arguments
